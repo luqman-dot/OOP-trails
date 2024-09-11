@@ -1,5 +1,8 @@
-class Car:
+# class Variable
+class Car: 
     def __init__(self, color, model, numberplate, year):
+        
+        # instance variable
         self.color = color
         self.model = model
         self.numberplate = numberplate
