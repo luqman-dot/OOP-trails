@@ -13,7 +13,7 @@ class Employee:
 
     def give_raise(self, amount):
         self.salary += amount
-        print(f"{self.name} has been given a raise of ${amount}. New salary is ${self.salary}.")
+        print(f"{self.name} has been given a raise of Ugx {amount}. New salary is ${self.salary}.")
 
 
 employee_1 = Employee("Luqman Kyembe", 101, "HR", 500000)
