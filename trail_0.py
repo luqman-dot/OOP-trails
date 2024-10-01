@@ -12,3 +12,4 @@ car_1 = Car("yellow", "Mustang", 899, 2000)
 car_2 = Car("green", "Lambo", 100, 2020)
 
 print(car_1.model)
+
