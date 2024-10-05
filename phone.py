@@ -26,5 +26,5 @@ my_phone = Phone("Apple", "iPhone 14", 1.500 , 128)
 phone2 = Phone("Samsung", "Galaxy S23", 899.000, 256)
 
 my_phone.show_info()            
-my_phone.make_call("123-456-7890") 
-my_phone.send_message("987-654-3210", "Hello, how are you?")
+my_phone.make_call("0785-244446") 
+my_phone.send_message("0757-759167", "Hello, how are you?")

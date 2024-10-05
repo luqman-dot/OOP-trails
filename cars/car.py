@@ -6,7 +6,6 @@ class Car:
         self.model = model  # instance variable
         self.numberplate = numberplate  # instance variable
         self.year = year
-
         Car.total_cars += 1
 
     def display_info(self):
