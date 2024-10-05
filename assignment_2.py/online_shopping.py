@@ -35,14 +35,14 @@ class ShoppingCart:
             total += product.price * quantity #total cost
         return total
 
-product1 = Product("Laptop", 1000, 5)
-product2 = Product("Phone", 500, 3)
+product1 = Product("Laptop", 1000, 15)
+product2 = Product("Phone", 500, 6)
 product3 = Product("books", 1000, 0)
 
 cart = ShoppingCart()
-cart.add_to_cart(product1, 2)
-cart.add_to_cart(product2, 1)
-cart.add_to_cart(product3,3)
+cart.add_to_cart(product1, 10)
+cart.add_to_cart(product2, 2)
+cart.add_to_cart(product3,1)
 
 cart.display_cart()
 
