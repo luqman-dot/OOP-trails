@@ -9,4 +9,5 @@ class Employees:
 Emp1 = Employees("luqman kyembe", "20")
 Emp2 = Employees("josh babes", "20")
 
-Emp1.display_details()        
+Emp1.display_details()
+        
