@@ -20,7 +20,7 @@ class Car(Vehicle):
 
 class Truck(Vehicle):
     def __init__(self, color, has_trailer=False):
-        super().__init__(color)  s
+        super().__init__(color)
         self.has_trailer = has_trailer 
     
     def __str__(self):

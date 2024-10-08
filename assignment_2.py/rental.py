@@ -96,7 +96,7 @@ class Garage:
 class GarageTester:
     @staticmethod
     def getExample():
-        truck = Truck("black", has_trailer=False)  
+        truck = Truck("red", has_trailer=False)  
         garage = Garage()  
         garage.setVehicle(truck)  
         print(garage) 
