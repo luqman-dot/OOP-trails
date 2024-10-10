@@ -1,21 +1,24 @@
 class animal:
     def __init__(self,name):
         self.name = name
-        self.is alive = True
+        self.is_alive = True
         
-def eat (self):
-    print(f"self.name" is eating)
+    def eat (self):
+        print(f"{self.name} is eating")
     
-def sleep (self):
-    print(f"self.name" is sleeping)
+    def sleep (self):
+        print(f"{self.name} is sleeping")
     
-class dog (animal):
+class Dog(animal):
     pass
 
-class cat (animal):
+class Cat(animal):
     pass
 
-dog = dog("self.name")
-cat = cat("self.name")
+dog = Dog("scooby max")
+cat = Cat("gafield")
 
-print(cat.name)
+# print(cat.name)
+dog.sleep()
+dog.eat()
+cat.eat()
