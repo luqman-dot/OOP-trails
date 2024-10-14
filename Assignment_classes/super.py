@@ -16,6 +16,4 @@ class Square(Shape):
             super(). __init__(color, is_filled)
             self.width = width
             
-describe(Circle)
-    
-    
+Circle.describe()
