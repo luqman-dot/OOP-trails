@@ -1,11 +1,10 @@
 class Person:
-    def __init__ (mysillyproject, name , age):
-        mysillyproject.name = name
-        mysillyproject.age = age
-        
-    def my_name(ABC):
-        print("hello world my name is + ABC.name")
-    
-    
-P1= ("John", 20)
-P1.my_name()
+  def __init__(mysillyobject, name, age):
+    mysillyobject.name = name
+    mysillyobject.age = age
+
+  def my_func(abc):
+    print("Hello my name is " + abc.name )
+
+p1 = Person("Josh", 36)
+p1.my_func()
