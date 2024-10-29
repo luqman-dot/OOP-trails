@@ -21,6 +21,9 @@ class Employee:
         return self.base_salary + (self.overtime * self.rate)
 
 employee1= Employee(base_salary=100000, overtime=5, rate=250000)
+employee2= Employee(base_salary=100000,overtime=40, rate=250000)
 
 salary = employee1.get_wage()
+print("Total Salary:", salary)
+salary= employee2.get_wage()
 print("Total Salary:", salary)
