@@ -1,15 +1,18 @@
-class Vehicle:
+class Vehicle:  #pa
     def __init__(self, model):
         self.model = model
         
+    
     def race(self):
         print("Start your engine!!!!")
 
+# inherits from the vehicle class
 class Car(Vehicle):
     def __init__(self, model, number_of_doors):
         super().__init__(model)
         self.number_of_doors = number_of_doors
 
+# inherits from the car class
 class Electric_Car(Car):
     def __init__(self, model, number_of_doors, battery_capacity):
         super().__init__(model, number_of_doors)
