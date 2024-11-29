@@ -25,7 +25,6 @@ class NFLTeam:
         print(f"Division: {self.division}")
         print(f"Record: {self.wins}-{self.losses} ({self.win_percentage():.2f}% wins)")
 
-# Example usage
 patriots = NFLTeam("Chiefs", "Kansas", "AFC West")
 patriots.record_game("win")
 patriots.record_game("win")
