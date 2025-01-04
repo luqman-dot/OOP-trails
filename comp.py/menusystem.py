@@ -4,18 +4,18 @@ class RestaurantOrderingSystem:
     def __init__(self):
         # Predefined menu (can be extended to use a database)
         self.menu = {
-            1: {"name": "Burger", "price": 5.99},
-            2: {"name": "Pizza", "price": 8.99},
-            3: {"name": "Pasta", "price": 7.49},
-            4: {"name": "Salad", "price": 4.99},
-            5: {"name": "Soda", "price": 1.99},
+            1: {"name": "Burger", "price": 5000},
+            2: {"name": "Pizza", "price": 8000},
+            3: {"name": "Pasta", "price": 7000},
+            4: {"name": "Salad", "price": 4000},
+            5: {"name": "Soda", "price": 1000},
         }
         self.order = []
 
     def display_menu(self):
         print("\n--- Menu ---")
         for item_id, item in self.menu.items():
-            print(f"{item_id}. {item['name']} - ${item['price']:.2f}")
+            print(f"{item_id}. {item['name']} - UgX {item['price']:.1f}")
         print("-------------------")
 
     def add_to_order(self):
@@ -45,8 +45,8 @@ class RestaurantOrderingSystem:
             quantity = order_item["quantity"]
             cost = item_price * quantity
             total += cost
-            print(f"{item_name} x {quantity} = ${cost:.2f}")
-        print(f"Total Bill: ${total:.2f}")
+            print(f"{item_name} x {quantity} = UgX {cost:.2f}")
+        print(f"Total Bill: UgX {total:.1f}")
         print("-------------------")
 
     def run(self):
