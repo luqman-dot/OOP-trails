@@ -1,12 +1,6 @@
 import math
 
 def normal_pdf(x, mu, sigma):
-    """
-    Calculate the PDF of a Normal distribution.
-    x: value
-    mu: mean
-    sigma: standard deviation
-    """
     return (1 / (math.sqrt(2 * math.pi) * sigma)) * math.exp(-((x - mu) ** 2) / (2 * sigma ** 2))
 
 # Example: Mean = 0, Standard Deviation = 1, for x = 1
