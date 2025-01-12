@@ -1,12 +1,5 @@
 class Car:
     def __init__(self, make, model, fuel_capacity, fuel_efficiency):
-        """
-        Initialize the car with basic attributes.
-        :param make: Manufacturer of the car
-        :param model: Model name of the car
-        :param fuel_capacity: Maximum fuel tank capacity in liters
-        :param fuel_efficiency: Fuel efficiency in kilometers per liter
-        """
         self.make = make
         self.model = model
         self.fuel_capacity = fuel_capacity
@@ -17,21 +10,28 @@ class Car:
 
     def accelerate(self, increase):
         """Increase the car's speed."""
+        if increase <= 0:
+            print("Speed increase must be positive!")
+            return
         self.speed += increase
         print(f"The car accelerates. Current speed: {self.speed} km/h")
 
     def brake(self, decrease):
         """Decrease the car's speed."""
+        if decrease <= 0:
+            print("Speed decrease must be positive!")
+            return
         self.speed = max(0, self.speed - decrease)
         print(f"The car slows down. Current speed: {self.speed} km/h")
 
     def drive(self, hours):
-        """
-        Simulate driving the car for a certain number of hours.
-        :param hours: Time to drive in hours
-        """
+       
         if self.speed == 0:
             print("The car is stationary. Accelerate to start driving.")
+            return
+
+        if hours <= 0:
+            print("Driving time must be positive!")
             return
 
         distance = self.speed * hours
@@ -48,36 +48,72 @@ class Car:
             print(f"You drove {distance:.2f} km and used {fuel_needed:.2f} liters of fuel.")
 
     def refuel(self, liters):
-        """
-        Refuel the car's tank.
-        :param liters: Amount of fuel to add in liters
-        """
+        
+        if liters <= 0:
+            print("Fuel amount must be positive!")
+            return
+
         if self.current_fuel + liters > self.fuel_capacity:
-            print(f"Fuel tank is full! Can only add {self.fuel_capacity - self.current_fuel:.2f} liters.")
+            added = self.fuel_capacity - self.current_fuel
             self.current_fuel = self.fuel_capacity
+            print(f"Fuel tank is full! Added {added:.2f} liters.")
         else:
             self.current_fuel += liters
             print(f"Added {liters:.2f} liters of fuel. Current fuel: {self.current_fuel:.2f} liters.")
 
     def display_status(self):
         """Show the current status of the car."""
+        fuel_warning = " (LOW FUEL!)" if self.current_fuel < 5 else ""
         print(f"""
         Car: {self.make} {self.model}
-        Fuel: {self.current_fuel:.2f}/{self.fuel_capacity} liters
+        Fuel: {self.current_fuel:.2f}/{self.fuel_capacity} liters{fuel_warning}
         Distance Traveled: {self.distance_traveled:.2f} km
         Current Speed: {self.speed} km/h
         """)
 
+# Improved Menu-Based Interaction
+def car_simulator():
+    car = Car("Tesla", "Model S", 75, 20)
 
-# Example Usage
+    while True:
+        print("\nWhat would you like to do?")
+        print("1. Accelerate")
+        print("2. Brake")
+        print("3. Drive")
+        print("4. Refuel")
+        print("5. Check Status")
+        print("6. Exit")
+        choice = input("Enter your choice: ")
+
+        try:
+            if choice == "1":
+                amount = int(input("Enter speed to increase (km/h): "))
+                car.accelerate(amount)
+
+            elif choice == "2":
+                amount = int(input("Enter speed to decrease (km/h): "))
+                car.brake(amount)
+
+            elif choice == "3":
+                hours = float(input("Enter hours to drive: "))
+                car.drive(hours)
+
+            elif choice == "4":
+                liters = float(input("Enter liters of fuel to add: "))
+                car.refuel(liters)
+
+            elif choice == "5":
+                car.display_status()
+
+            elif choice == "6":
+                print("Exiting simulation. Drive safe!")
+                break
+
+            else:
+                print("Invalid choice. Please choose a valid option.")
+
+        except ValueError:
+            print("Invalid input! Please enter numeric values where required.")
+
 if __name__ == "__main__":
-    my_car = Car("Tesla", "Model 3", 50, 20)
-
-    # Car simulation
-    my_car.display_status()
-    my_car.accelerate(60)
-    my_car.drive(2)
-    my_car.brake(20)
-    my_car.refuel(10)
-    my_car.drive(1)
-    my_car.display_status()
+    car_simulator()
